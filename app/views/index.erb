@@ -1,0 +1,23 @@
+<% if current_user %>
+  <div class="authContainer">
+    <%= erb :main, :layout => false %>
+  </div>
+<% else %>
+  <div class="container">
+    <center>
+    <div id="frontLogo">
+      <img src="http://i.imgur.com/qRAuGO3.png">
+    </div><br><br>
+    </center>
+    <div id="frontSignIn">
+      <%= erb :sign_in, :layout => false %>
+    </div><br><br>
+    <div id="frontSignUp">
+      <%= erb :sign_up, :layout => false %>
+    </div>
+  </div>
+<% end %>
+
+
+
+

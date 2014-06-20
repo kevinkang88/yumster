@@ -1,0 +1,29 @@
+<div id='calendarContainer'>
+<% if current_user %>
+<a href ="/">
+  <input type="submit" value="Home" class='foodCalendar'/></a>
+
+<% end %>
+  <br><br><br>
+  <table style="width:700px" id="calendarTable">
+  <tr>
+    <th>Name</th>
+    <th>Notes</th>
+    <th>Cookdate</th>
+    <th>Recipe Url</th>
+  </tr>
+    <% @all_recipes.each do |recipe| %>
+      <tr>
+        <td><%= recipe.dish_name %></td>
+        <td><%= recipe.notes %></td>
+        <td><%= recipe.cookdate %></td>
+        <td><a href="<%= recipe.recipe_url %>">full recipe</a></td>
+
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+
+
+

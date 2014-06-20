@@ -1,0 +1,15 @@
+  <h1>Sign In</h1><br>
+
+  <% if session[:error] %>
+    <div class="errors"><%= "#{session[:error]}" %></div>
+  <% end %>
+
+  <form id="formSignIn" method="post" action="/sessions">
+    <label class="label" for="email">Email</label>
+    <input type="email" name="email" placeholder="e.g., kevin@example.com" value="<%= @email %>"><br>
+    <label class="label" for="password">Password</label>
+    <input type="password" name="password" placeholder="password">
+    <br>
+    <div class="submit"><input type="submit" value="Sign In"></div>
+  </form>
+

@@ -1,0 +1,49 @@
+<% if current_user %>
+
+  <form id="sign-out" action="/sessions/<%= current_user.id %>" method="post">
+    <input name="_method" type="hidden" value="delete" />
+    <input type="submit" value="Sign Out" class='signOutBtn'/>
+  </form>
+  <a href ="/calendar">
+  <input type="submit" value="Calendar" class='foodCalendar'/></a>
+
+<% end %>
+<div id="mainHeader">
+  Search for recipes
+</div><br><br>
+<div id="questionBox">
+  <form>
+    <label class="ingredientLabel" for="ingredient"><span id="labelTag">Ingredients<span></label><br><br>
+    <input type="text" name="ingredient" placeholder="e.g., corn" id ="ingredientBox"/><br>
+    <button id="addIngredient">add more ingredients</button>
+    <br><br>
+    <input type="submit" value="Enter" id="dishSubmitBtn"/>
+
+  </form>
+</div>
+<br><br><br>
+
+<div id="recipeList">
+</div>
+<br><br><br><br><br>
+
+<div id='submitForm'>
+  <form id="submitDishPlan">
+    <img src="" id="dishImg">
+    <label for="dishTitleForm" id="formTag">Name of your dish</label><br>
+    <input type='text' id='dishTitleForm'/><br>
+
+    <a id="formTag" href="">Click for full recipe</a><br>
+
+    <label for="ingredientList" id="formTag">Ingredients</label><br>
+    <ul id="ingredientList">
+
+
+    </ul><br><br>
+    <label for="notesForm" id="formTag">Notes</label><br>
+    <textarea id="notesForm"></textarea><br><br>
+    <label for="dateForm" id="formTag">When are you cooking?</label><br>
+    <input type='datetime-local' name="cookingDateTime" id="dateForm"><br>
+    <input type="submit" id="submitFormBtn">
+  </form>
+</div>
